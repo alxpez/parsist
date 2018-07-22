@@ -1,7 +1,7 @@
 /**
  * Create a regular expression from the given regex-character delimiters
  * 
- * @param {String || String[]} delimiters : Delimiters must be valid regex characters
+ * @param {(String|String[])} delimiters : Delimiters must be valid regex characters
  */
 function _regexDelimiter(delimiters) {
   return Array.isArray(delimiters)
@@ -27,7 +27,7 @@ function _reducer(accomulator, currentItem) {
  * Parse and clean a string of raw items based on the given regex-character delimiters
  * 
  * @param {String} raw : Raw text/paragraph to parse and clean
- * @param {String || String[]} delimiters : Delimiters must be valid regex characters
+ * @param {(String|String[])} delimiters : Delimiters must be valid regex characters
  * @param {Boolean} toString : whether to get the result as a string or not (return an array of strings)
  * @param {String} separator : Used as the item separator when returning a string
  */
