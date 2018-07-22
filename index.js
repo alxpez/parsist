@@ -1,94 +1,22 @@
-const sample = `
-Ruben blades
-Datsik
-Rusko
-
-Allah las
-Darkside
-Air
-
-ali farka & toumani diabate
-Lunacidal tendencies
-Kocani orkestar
-
-highlight tribe
-Mija shitrit
-
-hippiehaus (Secret blue)
-Jon swift
-* Growndation
-Hazmat modine
-Xavier rudd
-* Hol baumann
-Fritz kalkbrenner
-
-steel pulse
-Emeterians
-Blueskank
-Pyramid blue
-Hot drop
-Tasty grooves
-Katchafire. 
-NAtural vibrations. 
-Beirut
-.hyperpotamus
-.James Vincent mc morroe. 
-Lali puna. 
-Max romeo. 
-Metronomy. 
-Phoenix. 
-Non palidece.
-satellite stories. 
-Samamidon. 
-Trixie whitley. 
-Yo la tengo. 
-Zuco 103. 
-Abyssians. 
-Adem. 
-The album leaf. 
-Alt J. 
-Ani di franco. 
-Balmorhea. 
-Baobab. 
-Clinton fearon. 
-Death cab for cutie.
- East park reggae collective. Fink.freelance whales. 
- Heptones. 
- Horace andy
- Iron & wine. 
-The ethiopians. 
-Israel vibrations.
- Fat freddys drop. 
- Lone ark. 
- 
-Camille
-Junior kelly
-`
-
-const sampleDelimiters = ['\\.', '\\,', '\\n', '\\*', '\\t', '\\r']
-
-// --------------------------------------------------------------------- //
-
-
-
-
 /**
- * Create a regexp from the given delimiters
+ * Create a regular expression from the given regex-character delimiters
  * 
- * @param {String[]} delimiters 
+ * @param {String || String[]} delimiters : Delimiters must be valid regex characters
  */
-function regexDelimiter(delimiters) {
-  return new RegExp('['.concat(delimiters.join('')).concat(']'))
+function _regexDelimiter(delimiters) {
+  return Array.isArray(delimiters)
+    ? new RegExp('['.concat(delimiters.join('')).concat(']'))
+    : new RegExp(delimiters)
 }
 
 
 /**
- * Reduce a dirty array to an "even-cased, trimmed and non-empty-items" one
+ * Reduce a dirty array to an "even-cased", "trimmed" and with "non-empty-items" one
  * 
  * @param {String[]} accomulator 
  * @param {String} currentItem 
  */
-function reducer(accomulator, currentItem) {
+function _reducer(accomulator, currentItem) {
   let normalized = currentItem.toLowerCase().trim()
   if (normalized != '') accomulator.push(normalized)
   return accomulator
@@ -96,20 +24,16 @@ function reducer(accomulator, currentItem) {
 
 
 /**
- * Parse and clean a string of raw items based on the given delimiter
+ * Parse and clean a string of raw items based on the given regex-character delimiters
  * 
- * @param {String} raw 
- * @param {String[]} delimiters
+ * @param {String} raw : Raw text/paragraph to parse and clean
+ * @param {String || String[]} delimiters : Delimiters must be valid regex characters
+ * @param {Boolean} toString : whether to get the result as a string or not (return an array of strings)
+ * @param {String} separator : Used as the item separator when returning a string
  */
-function parser(raw, delimiters) {
-  let delimiter = regexDelimiter(delimiters)
+export function parser(raw, delimiters, toString, separator) {
+  let delimiter = _regexDelimiter(delimiters)
   let parsed = raw.split(delimiter)
-  let cleaned = parsed.reduce(reducer, [])
-  console.log(cleaned)
-
-  return cleaned
+  let cleaned = parsed.reduce(_reducer, [])
+  return toString ? cleaned.join(separator || ', ') : cleaned
 }
-
-
-// RUN TEST
-parser(sample, sampleDelimiters)
