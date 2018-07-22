@@ -88,3 +88,24 @@ console.log('\n' + resultText)
 // Return in text format with the default separator
 let resultTextDefSep = parser(sample, sampleRegexDelimiters, true)
 console.log('\n' + resultTextDefSep)
+
+
+// README examples
+let raw = `
+  sample  ,
+, raw  .  
+text *  to 
+  parse
+`
+
+let delimiter = '[\\.\\,\\n\\*\\t]'
+
+// One example
+console.log(
+  parser(raw, delimiter, true, '\n')
+)
+
+// Another example
+console.log(
+  parser(raw, delimiter, true, ', ')
+)
