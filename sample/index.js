@@ -88,13 +88,3 @@ console.log('\n' + resultText)
 // Return in text format with the default separator
 let resultTextDefSep = parser(sample, sampleRegexDelimiters, true)
 console.log('\n' + resultTextDefSep)
-
-let readmeTest = parser(
-  `sample  ,
-  , raw  .  text *  to 
-  parse`,
-  '[\\.\\,\\n\\*\\t]',
-  true,
-  '\n'
-)
-console.log('\n' + readmeTest)
