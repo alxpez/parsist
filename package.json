@@ -25,9 +25,7 @@
     "url": "https://github.com/alxpez/parsist/issues"
   },
   "homepage": "https://github.com/alxpez/parsist#readme",
-  "dependencies": {
-    "vorpal": "^1.12.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0"
