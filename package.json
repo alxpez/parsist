@@ -1,0 +1,42 @@
+{
+  "name": "parsist",
+  "version": "1.0.0",
+  "description": "Raw text parser, cleaner and formatter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alxpez/parsist.git"
+  },
+  "keywords": [
+    "parser",
+    "cleaner",
+    "formatter",
+    "raw",
+    "list",
+    "string",
+    "array"
+  ],
+  "author": "alxpez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alxpez/parsist/issues"
+  },
+  "homepage": "https://github.com/alxpez/parsist#readme",
+  "dependencies": {
+    "vorpal": "^1.12.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "sourceMaps": true,
+    "retainLines": true
+  }
+}
