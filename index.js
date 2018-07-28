@@ -18,7 +18,7 @@ function _regexDelimiter(delimiters) {
  */
 function _reducer(accomulator, currentItem) {
   let normalized = currentItem.toLowerCase().trim()
-  if (normalized != '') accomulator.push(normalized)
+  if (normalized !== '') accomulator.push(normalized)
   return accomulator
 }
 
