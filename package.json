@@ -1,6 +1,6 @@
 {
   "name": "parsist",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Raw text parser, cleaner and formatter",
   "main": "index.js",
   "scripts": {
