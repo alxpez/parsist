@@ -1,8 +1,8 @@
-import { parser } from '../index'
+var parser = require('../index')
 
 
 // Example of a raw dirty and unorganized text list of bands
-const sample = `
+var sample = `
 Ruben blades
 Datsik
 Rusko
@@ -70,35 +70,35 @@ Junior kelly
 `
 
 // Delimiter regex test options
-const sampleDelimiters = ['\\.', '\\,', '\\n', '\\*', '\\t', '\\r']
-const sampleRegexDelimiters = '[\\.\\,\\n\\*\\t\\r]'
+var sampleDelimiters = ['\\.', '\\,', '\\n', '\\*', '\\t', '\\r']
+var sampleRegexDelimiters = '[\\.\\,\\n\\*\\t\\r]'
 
 
 // --------------------------------------------------------------------- //
 
 
 // Return as an array of strings
-let resultArray = parser(sample, sampleDelimiters)
+var resultArray = parser(sample, sampleDelimiters)
 console.log(resultArray)
 
 // Return in text format with a line-break as the separator
-let resultText = parser(sample, sampleRegexDelimiters, true, '\n')
+var resultText = parser(sample, sampleRegexDelimiters, true, '\n')
 console.log('\n' + resultText)
 
 // Return in text format with the default separator
-let resultTextDefSep = parser(sample, sampleRegexDelimiters, true)
+var resultTextDefSep = parser(sample, sampleRegexDelimiters, true)
 console.log('\n' + resultTextDefSep)
 
 
 // README examples
-let raw = `
+var raw = `
   sample  ,
 , raw  .  
 text *  to 
   parse
 `
 
-let delimiter = '[\\.\\,\\n\\*\\t]'
+var delimiter = '[\\.\\,\\n\\*\\t]'
 
 // One example
 console.log(
