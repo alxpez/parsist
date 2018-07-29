@@ -10,7 +10,7 @@
  * Module exports.
  * @public
  */
-module.exports = parsist
+module.exports = parser
 
 
 /**
