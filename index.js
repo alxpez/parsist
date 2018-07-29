@@ -6,7 +6,6 @@
 
 'use strict'
 
-
 /**
  * Module exports.
  * @public
